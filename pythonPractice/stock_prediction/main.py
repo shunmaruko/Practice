@@ -72,6 +72,7 @@ print(price_train.shape)
 plt.plot(date_train, price_train['end price'].values, color='lightpink', label="train data")
 plt.plot(date_test, price_test['end price'].values, color='limegreen', label="test data")
 plt.ylim(0,5000)
+plt.savefig("data.png")
 plt.legend()
 plt.show()
 """feature selection 
@@ -92,7 +93,7 @@ sns.pairplot(df_data, size=1.0)
 """
 train algorithm 
 """
-regr = RandomForestRegressor(n_estimators=10000,
+regr = RandomForestRegressor(n_estimators=100,
                              criterion='mse',
                              random_state=1,
                              n_jobs=-1)
@@ -118,15 +119,15 @@ for i in range(n_days, y_train_pred.shape[0]):
 plt.clf()
 plt.plot(np.arange(len(price_test_pred)), price_test_pred, label="predicted")
 plt.plot(np.arange(len(price_test_pred)+n_days), price_test["end price"].values, label="test")
-plt.ylim(0,5000)
 plt.legend()
 plt.tight_layout()
+plt.savefig("test_result.png")
 plt.show()
 
 plt.clf()
 plt.plot(np.arange(len(price_train_pred)), price_train_pred, label="predicted")
 plt.plot(np.arange(len(price_train_pred)+n_days), price_train["end price"].values, label="train")
-plt.ylim(0,5000)
 plt.tight_layout()
 plt.legend()
+plt.savefig("train_result.png")
 plt.show()
