@@ -1,5 +1,6 @@
 # to ignore binary file
 *
+!*/
 !*.rs
 !*.py
 !*.f90
