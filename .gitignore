@@ -1,0 +1,7 @@
+# to ignore binary file
+*
+!*.*
+!rust/*.*
+matlab/
+c_practice/
+matlab/
