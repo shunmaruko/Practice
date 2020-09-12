@@ -1,7 +1,8 @@
 # to ignore binary file
 *
-!*.*
-!rust/*.*
+!*.rs
+!*.py
+!*.f90
+!*.ipynb
 matlab/
 c_practice/
-matlab/
